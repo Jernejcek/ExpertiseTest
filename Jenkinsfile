@@ -28,10 +28,10 @@ pipeline {
                 echo 'deploying'
             }
         }
-        post {
-            always {
+    }
+    post {
+        always {
                 sh 'docker logout'
             }
         }
-    }
 }
