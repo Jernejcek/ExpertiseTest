@@ -2,14 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Building'
+                git branch: '**', url: 'https://github.com/Jernejcek/ExpertiseTest.git'
+                sh 'npm ci'
+                sh 'npm run build'
+
             }
         }
         stage('Deploy') {
