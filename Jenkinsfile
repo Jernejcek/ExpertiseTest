@@ -10,6 +10,12 @@ pipeline {
                 sh 'docker build -t jernejcek10/connectivity-test-server:latest .'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
         stage('Push') {
             when {
                 branch 'master'
