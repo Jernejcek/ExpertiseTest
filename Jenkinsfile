@@ -11,13 +11,8 @@ pipeline {
             }
         }
         stage('Test') {
-            agent {
-                docker {
-                    image 'node:18.16.0-alpine'
-                }
-            }
             steps {
-                docker { image 'node:18.16.0-alpine' }
+                sh 'npm ci'
                 sh 'npm test'
             }
         }
@@ -36,15 +31,18 @@ pipeline {
                 branch 'master'
             }
             steps {
+                sh 'docker system prune -a -f --volumes'
                 sh 'docker compose -f docker-compose-dev.yml down'
                 sh 'docker compose -f docker-compose-dev.yml pull'
                 sh 'docker compose -f docker-compose-dev.yml up -d'
             }
         }
     }
-    post {
-        always {
+    post 
+    {
+        always
+        {
                 sh 'docker logout'
-            }
         }
+    }
 }
