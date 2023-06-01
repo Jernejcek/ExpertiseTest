@@ -10,6 +10,13 @@ pipeline {
                 sh 'docker build -t jernejcek10/connectivity-test-server:latest .'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'npm ci'
+                sh 'npm test'
+            }
+        }
+
         stage('Push') {
             when {
                 branch 'master'
@@ -24,15 +31,18 @@ pipeline {
                 branch 'master'
             }
             steps {
+                sh 'docker system prune -a -f --volumes'
                 sh 'docker compose -f docker-compose-dev.yml down'
                 sh 'docker compose -f docker-compose-dev.yml pull'
                 sh 'docker compose -f docker-compose-dev.yml up -d'
             }
         }
     }
-    post {
-        always {
+    post 
+    {
+        always
+        {
                 sh 'docker logout'
-            }
         }
+    }
 }
