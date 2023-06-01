@@ -11,6 +11,11 @@ pipeline {
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:18.16.0-alpine'
+                }
+            }
             steps {
                 docker { image 'node:18.16.0-alpine' }
                 sh 'npm test'
