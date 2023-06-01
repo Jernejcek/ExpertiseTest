@@ -5,14 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: '**', url: 'https://github.com/Jernejcek/ExpertiseTest.git'
-                sh 'npm ci'
-                sh 'npm run build'
-
+                sh 'docker build -t connectivity-test-server .'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying'
+                echo 'deploying'
             }
         }
     }
