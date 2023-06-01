@@ -21,7 +21,9 @@ pipeline {
                 branch 'master'
             }
             steps {
-                echo 'deploying'
+                sh 'docker compose -f docker-compose-dev.yml down'
+                sh 'docker compose -f docker-compose-dev.yml pull'
+                sh 'docker compose -f docker-compose-dev.yml up -d'
             }
         }
     }
