@@ -67,19 +67,19 @@ This project includes a Jenkins pipeline (Jenkinsfile) that automates the build,
 
   
   
-1. Prune Docker Resources: It prunes all Docker resources such as containers, images, and volumes to ensure a clean deployment environment. This step helps remove any unused or outdated resources.
+--* Prune Docker Resources: It prunes all Docker resources such as containers, images, and volumes to ensure a clean deployment environment. This step helps remove any unused or outdated resources.
 
   
   
-2. Shut Down Existing Containers: It shuts down any existing containers that are defined in the docker-compose-dev.yml file. This ensures that any previous instances of the application are stopped before deploying the updated version.
+--* Shut Down Existing Containers: It shuts down any existing containers that are defined in the docker-compose-dev.yml file. This ensures that any previous instances of the application are stopped before deploying the updated version.
 
   
   
-3. Pull Latest Images: It pulls the latest images defined in the docker-compose-dev.yml file. This step ensures that the application is deployed with the most up-to-date container images.
+--* Pull Latest Images: It pulls the latest images defined in the docker-compose-dev.yml file. This step ensures that the application is deployed with the most up-to-date container images.
 
   
   
-4. Start Containers: It starts the containers in detached mode for deployment. This allows the application to run in the background without blocking the pipeline execution.
+--* Start Containers: It starts the containers in detached mode for deployment. This allows the application to run in the background without blocking the pipeline execution.
 
   
 Post: This section specifies actions to be performed after the pipeline stages have completed. In this case, it ensures that the Docker client is logged out.
