@@ -3,6 +3,5 @@ version: '3'
 services:
   connectivity-test-server:
     image: jernejcek10/connectivity-test-server:latest
-    container_name: connectivity-test-server
     ports:
       - '3000:3000'
