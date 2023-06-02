@@ -51,35 +51,41 @@ Set the Content type to application/json and trigger the webhook on the push eve
 
 This project includes a Jenkins pipeline (Jenkinsfile) that automates the build, test, and deployment process. Here's an explanation of the Jenkinsfile stages:
 
-Build: This stage builds the Docker image for the backend application.
+**Build:** This stage builds the Docker image for the backend application.
 
   
 
-Test: This stage installs the project dependencies using npm and runs the test suite (I also installed jest to my project, and demonstrate Unit test in file "/tests/resoonse.test.js")
+**Test:** This stage installs the project dependencies using npm and runs the test suite (I also installed jest to my project, and demonstrate Unit test in file "/tests/resoonse.test.js")
 
   
   
-Push: This stage is only triggered when the branch is 'master'. It logs in to Docker Hub using the provided credentials, and then pushes the built Docker image to the Docker Hub registry.
+**Push:** This stage is only triggered when the branch is 'master'. It logs in to Docker Hub using the provided credentials, and then pushes the built Docker image to the Docker Hub registry.
 
   
   
-Deploy: This stage is also triggered when the branch is 'master'. It performs the following steps:
+**Deploy:** This stage is also triggered when the branch is 'master'. I decided to do deployment with docker compose because of simplicity or project,( if you want to know how to do it with kubernetes check folder Assigment - Task 3 - Kubernetes) It performs the following steps:
 
   
   
-Prunes all Docker resources (containers, images, volumes) to ensure a clean deployment environment.
+1. Prune Docker Resources: It prunes all Docker resources such as containers, images, and volumes to ensure a clean deployment environment. This step helps remove any unused or outdated resources.
+
   
   
-Shuts down any existing containers defined in the docker-compose-dev.yml file.
+2. Shut Down Existing Containers: It shuts down any existing containers that are defined in the docker-compose-dev.yml file. This ensures that any previous instances of the application are stopped before deploying the updated version.
+
   
   
+3. Pull Latest Images: It pulls the latest images defined in the docker-compose-dev.yml file. This step ensures that the application is deployed with the most up-to-date container images.
+
   
-Pulls the latest images defined in the docker-compose-dev.yml file.
   
+4. Start Containers: It starts the containers in detached mode for deployment. This allows the application to run in the background without blocking the pipeline execution.
+
   
-Starts the containers in detached mode for deployment.
 Post: This section specifies actions to be performed after the pipeline stages have completed. In this case, it ensures that the Docker client is logged out.
 
+  
+  
 Please note that the Jenkinsfile assumes the existence of a Jenkins credential named 'jernejbelcl-dockerhub', which should store the Docker Hub username and password.
 You can simply added adding credentials, but id must be the same as in my case in Jenkinsfile: DOCKERHUB_CREDENTIALS = credentials('jernejbelcl-dockerhub')
 
