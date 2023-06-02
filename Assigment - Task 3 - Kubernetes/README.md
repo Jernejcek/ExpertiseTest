@@ -29,10 +29,10 @@ To set up infrastructure that is resilient to failures and scales automatically 
 
 2. Next, install kubectl, the command-line tool used to interact with Kubernetes clusters. Refer to the Kubernetes documentation for your specific operating system to find the instructions on how to install kubectl.
 
-3. Once you have Minikube and kubectl installed, start the Minikube cluster by running the following command in your terminal: minikube start
+3. Once you have Minikube and kubectl installed, start the Minikube cluster by running the following command in your terminal: `minikube start`
 
-4. Now, it's time to deploy your application to the Kubernetes cluster. Assuming you have a configuration file named "backend.yaml" in your current folder, apply the configuration by executing the following command: kubectl apply -f backend.yaml
+4. Now, it's time to deploy your application to the Kubernetes cluster. Assuming you have a configuration file named "backend.yaml" in your current folder, apply the configuration by executing the following command: `kubectl apply -f backend.yaml`
 
-5. To check the status of your deployment and see if the pod is running without any issues, run the command: kubectl get pods
+5. To check the status of your deployment and see if the pod is running without any issues, run the command: `kubectl get pods`
 
 By following these steps, you will be able to set up and deploy your application using Kubernetes. If you encounter any problems or have further questions, feel free to ask for assistance.
