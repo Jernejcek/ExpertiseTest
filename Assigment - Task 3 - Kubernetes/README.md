@@ -1,8 +1,8 @@
-##Simple CTS Backend Application with Kubernetes
+# Simple CTS Backend Application with Kubernetes
 
 The Simple CTS Backend Application can be effectively deployed and managed using Kubernetes, providing a resilient infrastructure that can handle failures of compute nodes and automatically scale in response to increased CPU demand. This README.md file outlines how you can set up the infrastructure and provides configuration files for the necessary tools.
 
-** Why Use Kubernetes?
+## Why Use Kubernetes?
 Kubernetes is a container orchestration platform that offers numerous benefits for deploying and managing applications, including:
 
 2. High availability: Kubernetes provides built-in mechanisms for ensuring the availability of your application even if individual compute nodes fail. It automatically detects and replaces failed nodes, minimizing downtime.
@@ -13,7 +13,7 @@ Kubernetes is a container orchestration platform that offers numerous benefits f
 
 5. Ease of management: Kubernetes simplifies the management of containerized applications through its declarative configuration approach. You can define the desired state of your application, and Kubernetes handles the underlying infrastructure, ensuring it matches the desired state.
 
-** Setting Up Infrastructure with Kubernetes
+## Setting Up Infrastructure with Kubernetes
 
 To set up infrastructure that is resilient to failures and scales automatically using Kubernetes, follow these steps:
 
@@ -23,7 +23,7 @@ To set up infrastructure that is resilient to failures and scales automatically 
 
 3. Set Up Horizontal Pod Autoscaler (HPA): Configure an HPA to automatically scale the number of application replicas based on CPU usage. Define the target CPU utilization percentage and minimum/maximum number of replicas in the HPA manifest.
 
-** How would i set up with Kubernetes
+## Set up CTS with Kubernetes
 
 1. Start by installing Minikube, a tool that runs a single-node Kubernetes cluster on your local machine. Visit the Minikube GitHub page at github.com/kubernetes/minikube and follow the installation instructions provided for your operating system.
 
