@@ -53,15 +53,30 @@ This project includes a Jenkins pipeline (Jenkinsfile) that automates the build,
 
 Build: This stage builds the Docker image for the backend application.
 
+  
+
 Test: This stage installs the project dependencies using npm and runs the test suite (I also installed jest to my project, and demonstrate Unit test in file "/tests/resoonse.test.js")
 
+  
+  
 Push: This stage is only triggered when the branch is 'master'. It logs in to Docker Hub using the provided credentials, and then pushes the built Docker image to the Docker Hub registry.
 
+  
+  
 Deploy: This stage is also triggered when the branch is 'master'. It performs the following steps:
 
+  
+  
 Prunes all Docker resources (containers, images, volumes) to ensure a clean deployment environment.
+  
+  
 Shuts down any existing containers defined in the docker-compose-dev.yml file.
+  
+  
+  
 Pulls the latest images defined in the docker-compose-dev.yml file.
+  
+  
 Starts the containers in detached mode for deployment.
 Post: This section specifies actions to be performed after the pipeline stages have completed. In this case, it ensures that the Docker client is logged out.
 
