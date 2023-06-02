@@ -67,19 +67,19 @@ This project includes a Jenkins pipeline (Jenkinsfile) that automates the build,
 
   
   
---* Prune Docker Resources: It prunes all Docker resources such as containers, images, and volumes to ensure a clean deployment environment. This step helps remove any unused or outdated resources.
+- Prune Docker Resources: It prunes all Docker resources such as containers, images, and volumes to ensure a clean deployment environment. This step helps remove any unused or outdated resources.
 
   
   
---* Shut Down Existing Containers: It shuts down any existing containers that are defined in the docker-compose-dev.yml file. This ensures that any previous instances of the application are stopped before deploying the updated version.
+- Shut Down Existing Containers: It shuts down any existing containers that are defined in the docker-compose-dev.yml file. This ensures that any previous instances of the application are stopped before deploying the updated version.
 
   
   
---* Pull Latest Images: It pulls the latest images defined in the docker-compose-dev.yml file. This step ensures that the application is deployed with the most up-to-date container images.
+- Pull Latest Images: It pulls the latest images defined in the docker-compose-dev.yml file. This step ensures that the application is deployed with the most up-to-date container images.
 
   
   
---* Start Containers: It starts the containers in detached mode for deployment. This allows the application to run in the background without blocking the pipeline execution.
+- Start Containers: It starts the containers in detached mode for deployment. This allows the application to run in the background without blocking the pipeline execution.
 
   
 Post: This section specifies actions to be performed after the pipeline stages have completed. In this case, it ensures that the Docker client is logged out.
@@ -100,10 +100,18 @@ To deploy the Simple CTS Backend Application to Google Cloud, you can follow the
 2. Connect to the VM instance via SSH. You can use the SSH client of your choice or the built-in SSH functionality provided by Google Cloud Console.
 3. Once connected to the VM, install the necessary software and dependencies:
 4. Install needed dependencies
---* Install Docker: Follow the Docker installation instructions specific to your VM's operating system.
---* Install Node.js: You can use a package manager like apt or yum to install Node.js on your VM.
---* Install Jenkins: Download and install Jenkins on your VM following the official Jenkins documentation.
---* Configure Jenkins: Set up Jenkins with the necessary plugins and configurations for your deployment pipeline. Ensure that you have the appropriate credentials configured for accessing your Git repository and Docker Hub.
+  
+  
+- Install Docker: Follow the Docker installation instructions specific to your VM's operating system.
+  
+  
+- Install Node.js: You can use a package manager like apt or yum to install Node.js on your VM.
+  
+  
+- Install Jenkins: Download and install Jenkins on your VM following the official Jenkins documentation.
+  
+  
+- Configure Jenkins: Set up Jenkins with the necessary plugins and configurations for your deployment pipeline. Ensure that you have the appropriate credentials configured for accessing your Git repository and Docker Hub.
 5. Customize the deployment steps: Open the Jenkinsfile in your repository and navigate to the "Deploy" stage. Modify the deployment steps to match your Google Cloud environment and configuration. This may include additional setup, configuration, or deployment commands specific to your project.
 6. Save the changes to the Jenkinsfile and trigger the pipeline: Commit and push the modified Jenkinsfile to your Git repository. This should trigger the Jenkins pipeline, which will execute the build, test, and deployment stages based on the updated configuration.
 7. Monitor the deployment: Use the Jenkins console or dashboard to monitor the progress of the deployment pipeline. You should be able to view the logs, check for any errors, and track the success of each stage.
