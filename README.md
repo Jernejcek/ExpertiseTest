@@ -1,7 +1,7 @@
 # ExpertiseTestSimple CTS Backend Application with Node.js Express, Jenkins, and Google Cloud
 Welcome to the Simple CTS (Connectivity Test Server) Backend Application repository! This project aims to provide a basic backend server built with Node.js, Express, Jenkins pipeline hosted on Google Cloud.
 It includes a Dockerfile for containerization and can be easily run locally for testing purposes.
-You can check this CTS Backend Application on (http://34.65.154.30:3000/ping), hosted on Google Cloud.
+You can check this CTS Backend Application on (http://34.65.143.20:3000/ping), hosted on Google Cloud.
 For Assigment Task 3 solution check folder Assigment - Task 3 - Kubernetes where is configuration file and described why i would use this infrastructure.
 
 Prerequisites
@@ -43,7 +43,7 @@ To configure and trigger the Jenkins pipeline for the Simple CTS Backend Applica
 5. Install and Configure Webhook Trigger: Install the "Scan Multibranch Webhook Trigger" feature in Jenkins. Restart the Jenkins server to apply the changes.
 6. Configure Webhook in GitHub: In your GitHub repository settings, navigate to "Webhooks" and add a new webhook. Set the Payload URL to http://serverIP:8080/multibranch-webhook-trigger/invoke?token="mytoken".
 Replace serverIP with the IP address of your Jenkins server and <trigger-token> with the token you want to use for triggering the pipeline (e.g., "mytoken").
-For example in my case: http://34.65.154.30:3000:8080/multibranch-webhook-trigger/invoke?token=mytoken (I set variable trigger token to mytoken before).
+For example in my case: (http://34.65.143.20:8080/multibranch-webhook-trigger/invoke?token=mytoken (I set variable trigger token to mytoken before).
 Set the Content type to application/json and trigger the webhook on the push event.
 7. Activate the Jenkins Pipeline: Save the Jenkins job configuration, and the pipeline will be activated. It will now trigger whenever new code is pushed to any branch of the repository.
 
