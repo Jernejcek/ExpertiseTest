@@ -1,7 +1,7 @@
 # ExpertiseTestSimple CTS Backend Application with Node.js Express, Jenkins, and Google Cloud
 Welcome to the Simple CTS (Connectivity Test Server) Backend Application repository! This project aims to provide a basic backend server built with Node.js, Express, Jenkins pipeline hosted on Google Cloud.
 It includes a Dockerfile for containerization and can be easily run locally for testing purposes.
-You can check this CTS Backend Application on (http://34.125.127.183:3000/ping), hosted on Google Cloud.
+You can check this CTS Backend Application on  (http://34.125.127.183:3000/ping), hosted on Google Cloud.
 For Assigment Task 3 solution check folder Assigment - Task 3 - Kubernetes where is configuration file and described why i would use this infrastructure.
 
 Prerequisites
