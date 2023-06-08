@@ -7,7 +7,7 @@ For Assigment Task 3 solution check folder Assigment - Task 3 - Kubernetes where
 Prerequisites
 Before running the application, ensure that you have the following dependencies installed on your local machine:
 
-Node.js (version >= 10)
+Node.js (version >= 16)
 Docker
 Jenkins (for automated building, testing, and deployment)
 
