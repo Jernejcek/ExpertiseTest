@@ -12,7 +12,7 @@ Docker
 Jenkins (for automated building, testing, and deployment)
 
 Optionally
-Google Cloud Virtual Machine for externally access
+Google Cloud Virtual Machine for externally access or on your private server
 
 # Docker
 To use this Docker image, you'll need to have Docker installed on your system. Once you have Docker installed, 
